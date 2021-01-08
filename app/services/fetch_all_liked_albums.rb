@@ -1,4 +1,4 @@
-class FetchAllLikedTracks
+class FetchAllLikedAlbums
   include FetchAllLikedResourceItems
 
   def self.call(access_token)
@@ -8,7 +8,7 @@ class FetchAllLikedTracks
   def initialize(access_token)
     @access_token = access_token
     @offset = 0
-    @resource = :tracks
+    @resource = :albums
     @liked_items = []
   end
 end
