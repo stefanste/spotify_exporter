@@ -1,13 +1,14 @@
 module AuthorizationConcern
   def handle_spotify_authorization
+    return if session[:access_token]
     redirect_to(authorization_url) && return unless params['code']
 
     response = request_access_and_refresh_tokens
     if response.code == 200
       response_body = JSON.parse(response.body)
 
-      @access_token = response_body['access_token']
-      @refresh_token = response_body['refresh_token']
+      session[:access_token] = response_body['access_token']
+      session[:refresh_token] = response_body['refresh_token']
     end
   end
 
