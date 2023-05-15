@@ -1,24 +1,13 @@
-# README
+# spotify_exporter
+Export and backup your Spotify playlists and saved music.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usage
+To run the application locally:
+- Copy .env dev/test files and update app client ID & secret
+- Run migrations - `bin/rails db:migrate`
+- Run server - `bin/rails server`
+- Visit `localhost:3000/<liked_albums|liked_tracks>` and grant the app access to your Spotify account 
 
-Things you may want to cover:
+## Todo
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Implement using refresh token to get new access token when needed
